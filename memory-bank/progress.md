@@ -2,10 +2,10 @@
 
 *This file tracks what works, what's left to build, the current status, known issues, and the evolution of project decisions.*
 
-## Current Status (as of 2025-04-16 11:45 AM)
+## Current Status (as of 2025-04-16 10:36 PM)
 
-*   **Phase:** Initial Implementation (UI, Structure, API, MCP Server Enhancements).
-*   **Overall Progress:** Project planned, Memory Bank initialized. Core Django structure for the `crawler` app is set up (model, migrations, basic form, view, template, URL routing). Django API endpoints (`/api/search_pages/`, `/api/get_content/`) are implemented. The MCP server (`web2mcp-server`) is functional and enhanced. Dependencies are listed in `requirements.txt`. The application can run, display the form, accept URL submissions (but doesn't crawl yet), and the MCP server can interact with the enhanced API.
+*   **Phase:** Initial Implementation (UI, Structure, API, MCP Server Enhancements, Documentation).
+*   **Overall Progress:** Project planned, Memory Bank initialized. Core Django structure for the `crawler` app is set up (model, migrations, basic form, view, template, URL routing). Django API endpoints (`/api/search_pages/`, `/api/get_content/`) are implemented. The MCP server (`web2mcp-server`) is functional and enhanced. Dependencies are listed in `requirements.txt`. A `README.md` file has been created. The application can run, display the form, accept URL submissions (but doesn't crawl yet), and the MCP server can interact with the enhanced API.
 
 ## What Works
 
@@ -16,6 +16,8 @@
 *   The form validates input URL format (HTTP/HTTPS).
 *   Submitting a valid URL shows a success message (placeholder action).
 *   Submitting an invalid URL shows form errors.
+*   **Project Documentation:**
+    *   `README.md` created with project overview, setup, usage, and screenshot.
 *   **Django API (`/api/search_pages/`):**
     *   Accepts `keyword` parameter.
     *   Accepts optional `domain`, `start_date`, `end_date` parameters for filtering.

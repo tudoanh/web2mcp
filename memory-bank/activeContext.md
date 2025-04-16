@@ -6,8 +6,9 @@
 
 The primary focus is implementing the core crawling logic within the Django application (`crawler/tasks.py`). Additionally, ensuring the MCP server correctly interacts with the enhanced Django API.
 
-## Recent Changes (as of 2025-04-16 11:44 AM)
+## Recent Changes (as of 2025-04-16 10:36 PM)
 
+*   Created `README.md` with project description, setup instructions, usage, and a screenshot (`docs/images/screenshot.png`).
 *   Project goal defined: Create a Django-based web crawler (Web2MCP) to index websites for MCP agent use.
 *   Technology stack chosen: Python, Django, SQLite, Requests, BeautifulSoup4.
 *   Initial architecture planned: Standard Django MTV pattern with a dedicated `crawler` app.
