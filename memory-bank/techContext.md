@@ -27,12 +27,9 @@
 *   `requests`
 *   `beautifulsoup4`
 *   `lxml` (Often used as a faster parser with BeautifulSoup)
+*   `django-mcp` (Library for integrating MCP servers into Django via ASGI)
+*   `uvicorn` (ASGI server, needed to run the application)
 *   (Potentially a background task runner like `celery` or `django-q` in the future)
-*   **MCP Server Dependencies (Node.js):**
-    *   `@modelcontextprotocol/sdk`
-    *   `axios`
-    *   `turndown` (For HTML to Markdown conversion in `get_page_content` tool)
-    *   `@types/turndown` (TypeScript types for turndown)
 
 ## Technical Constraints
 
@@ -44,7 +41,10 @@
 
 ## Tool Usage Patterns
 
-*   Use Django's ORM for all database interactions.
-*   Use Django Forms for input validation.
-*   Use Django Templates for rendering the UI.
-*   Separate crawling logic from view logic, potentially in a `tasks.py` or `utils.py` module within the Django app.
+*   Use Django's ORM for all database interactions (`crawler` and `mcp_server` apps).
+*   Use Django Forms for input validation (`crawler` app).
+*   Use Django Templates for rendering the UI (`crawler` app).
+*   Separate crawling logic into `crawler/tasks.py`.
+*   Implement MCP tools as decorated functions in `mcp_server/tools.py` using `django-mcp`.
+*   Mount the MCP server in `core/asgi.py` using `django-mcp`.
+*   Ensure tool discovery via `mcp_server/apps.py`.

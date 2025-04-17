@@ -2,3 +2,6 @@ django>=4.0,<5.0
 requests>=2.20,<3.0
 beautifulsoup4>=4.9,<5.0
 lxml>=4.6,<5.0
+django-mcp
+starlette>=0.37,<0.38 # Added for ASGI mounting in core/asgi.py
+uvicorn>=0.29,<0.30 # Added ASGI server

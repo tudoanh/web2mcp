@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8008:8008"
+    volumes:
+      # Mount the project directory into the container for development
+      # This allows code changes to be reflected without rebuilding the image
+      - .:/app
+    # Run the ASGI server (uvicorn) which handles both Django and the integrated MCP server
+    # --reload enables auto-reloading on code changes in development
+    command: uvicorn core.asgi:application --host 0.0.0.0 --port 8008 --reload
+    # Ensure the database file persists on the host via the volume mount above

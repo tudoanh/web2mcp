@@ -19,5 +19,6 @@ from django.urls import path, include # Import include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('mcp/', include('mcp_server.urls')), # Removed: MCP routing handled by ASGI in core/asgi.py
     path('', include('crawler.urls')), # Include crawler app URLs at root
 ]

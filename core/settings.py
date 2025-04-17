@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'crawler', # Added Web2MCP crawler app
+    'mcp_server', # Added MCP server app
 ]
 
 MIDDLEWARE = [
